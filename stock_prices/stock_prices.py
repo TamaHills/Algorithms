@@ -3,7 +3,23 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
+  max_profit = float('-inf')
+  min_price = float('inf')
+  for price in prices:
+    profit = 0
+    profit = price - min_price
+    
+    if profit == 0:
+      pass
+    elif profit > max_profit:
+      max_profit = profit
+    
+    if price < min_price:
+      min_price = price
+    
+  
+  return max_profit
+
 
 
 if __name__ == '__main__':
