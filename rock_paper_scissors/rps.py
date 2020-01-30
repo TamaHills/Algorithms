@@ -3,7 +3,19 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  possibles = []
+  options = ['rock', 'paper', 'scissors']
+
+  if n == 1:
+    return [[option] for option in options]
+  if n == 0:
+    return [[]]
+ 
+  for prev in rock_paper_scissors(n - 1):
+    for opt in options:
+      possibles += [prev + [ opt ]]
+  
+  return possibles
 
 
 if __name__ == "__main__":
